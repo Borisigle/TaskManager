@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState} from "react";
+import TaskList from "./components/TaskList";
+import Input from "./components/Input";
+import EditInput from "./components/EditInput";
 
 function App() {
+  const [tasks, setTasks] = useState("");
+  const [addTask, setAddTask] = useState(false);
+  const [edit, setEdit] = useState(false)
+
+  const toggleAddTask = () => {
+    setAddTask(true);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <h1>My Tasks</h1>
+        {addTask ? (
+          <Input
+            tasks={tasks}
+            setTasks={setTasks}
+            addTask={addTask}
+            setAddTask={setAddTask}
+          />
+        ) : (
+          <button onClick={() => toggleAddTask()}>+</button>
+        )}
+      </div>
+      {edit ? <EditInput /> : ''}
+      <TaskList tasks={tasks} setTasks={setTasks} edit={edit} setEdit={setEdit} setAddTask={setAddTask} />
     </div>
   );
 }
