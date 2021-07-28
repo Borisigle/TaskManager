@@ -1,13 +1,14 @@
 import "./App.css";
-import { useState} from "react";
+import { useState } from "react";
 import TaskList from "./components/TaskList";
 import Input from "./components/Input";
-import EditInput from "./components/EditInput";
+import { BiPlusCircle } from "react-icons/bi";
+import moment from "moment";
 
 function App() {
-  const [tasks, setTasks] = useState("");
+  const [tasks, setTasks] = useState([]);
   const [addTask, setAddTask] = useState(false);
-  const [edit, setEdit] = useState(false)
+  const [edit, setEdit] = useState(false);
 
   const toggleAddTask = () => {
     setAddTask(true);
@@ -16,20 +17,35 @@ function App() {
   return (
     <div className="App">
       <div>
-        <h1>My Tasks</h1>
-        {addTask ? (
+        <div className="contenedor-header">
+          <div className="contenedor-fecha">
+            <div className="capitalize-day">{moment().format("DD")}</div>
+            <div className="mm-yy">
+              <div>{moment().format("MMM").toUpperCase()}</div>
+              <div>{moment().format("YYYY")}</div>
+            </div>
+          </div>
+          <div>{moment().format("dddd").toUpperCase()}</div>
+        </div>
+        {addTask || edit ? (
           <Input
             tasks={tasks}
             setTasks={setTasks}
             addTask={addTask}
             setAddTask={setAddTask}
+            edit={edit}
           />
         ) : (
-          <button onClick={() => toggleAddTask()}>+</button>
+          <BiPlusCircle size="2rem" onClick={() => toggleAddTask()} />
         )}
       </div>
-      {edit ? <EditInput /> : ''}
-      <TaskList tasks={tasks} setTasks={setTasks} edit={edit} setEdit={setEdit} setAddTask={setAddTask} />
+      <TaskList
+        tasks={tasks}
+        setTasks={setTasks}
+        edit={edit}
+        setEdit={setEdit}
+        setAddTask={setAddTask}
+      />
     </div>
   );
 }
