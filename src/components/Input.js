@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; 
 import { v4 as uuidv4 } from "uuid";
 
-function Input({ tasks, setTasks, setAddTask }) {
+function Input({ tasks, setTasks, setAddTask, edit}) {
   const [task, setTask] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newTask = {name:task, id:uuidv4()}
+    const newTask = {name:task, id:uuidv4(), complete: false}
     setTasks([...tasks, newTask]);
     localStorage.setItem('data', JSON.stringify([...tasks, newTask]))
     setTask("");
@@ -19,10 +19,12 @@ function Input({ tasks, setTasks, setAddTask }) {
     setTask(e.target.value);
   };
 
+  
+
   return (
     <form onSubmit={handleSubmit}>
       <input value={task} type="text" onChange={handleChange} />
-      <button>Add task</button>
+      {edit ? <button>Edit</button> : <button>Add Task</button>}
     </form>
   );
 }
