@@ -21,11 +21,11 @@ function App() {
           <div className="contenedor-fecha">
             <div className="capitalize-day">{moment().format("DD")}</div>
             <div className="mm-yy">
-              <div>{moment().format("MMM").toUpperCase()}</div>
-              <div>{moment().format("YYYY")}</div>
+              <div style={{fontWeight: '600'}}>{moment().format("MMM").toUpperCase()}</div>
+              <div style={{fontWeight: '200'}}>{moment().format("YYYY")}</div>
             </div>
           </div>
-          <div>{moment().format("dddd").toUpperCase()}</div>
+          <div className="day">{moment().format("dddd").toUpperCase()}</div>
         </div>
         {addTask || edit ? (
           <Input
