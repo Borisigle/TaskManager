@@ -1,0 +1,90 @@
+html {
+  height: -webkit-fill-available;
+}
+
+body {
+  color: #222222;
+  min-height: -webkit-fill-available;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background-color: #fcfcfc;
+  font-family: 'Poppins'
+}
+
+.contenedor {
+  height: 80%;
+}
+
+.todo {
+  margin: auto;
+  width: 84%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 14px;
+  
+}
+.sub-todo {
+  display: flex;
+  align-content: center;
+}
+
+.icons {
+  color: rgb(14, 8, 24);
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.contenedor-header {
+  width: 84%;
+  margin: auto;
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contenedor-fecha {
+  display: flex;
+  align-items: center;
+}
+
+.capitalize-day {
+  font-size: 34px;
+  font-weight: 700;
+  height: auto;
+}
+
+.mm-yy {
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 12px;
+  align-items: flex-start;
+}
+
+.day {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.add-icon {
+  font-size: 3.5rem;
+  color: #c81d25;
+}

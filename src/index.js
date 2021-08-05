@@ -4,11 +4,13 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
+import { ChakraProvider } from "@chakra-ui/react";
 
 ReactDOM.render(
   <StrictMode>
-    <ColorModeScript />
+    <ChakraProvider>
     <App />
+    </ChakraProvider>
   </StrictMode>,
   document.getElementById('root')
 );
