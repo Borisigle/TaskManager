@@ -1,21 +1,20 @@
-import React from "react";
-import { RiDeleteBin2Line, RiPencilLine } from "react-icons/ri";
-import { Box } from "@chakra-ui/react"
+import React from 'react';
+import { RiDeleteBin2Line, RiPencilLine } from 'react-icons/ri';
+import { Box } from '@chakra-ui/react';
 
 function TaskList({ tasks, setTasks, setEdit, onOpen }) {
-  const deleteTask = (id) => {
-    const filteredTasks = tasks.filter((task) => task.id !== id);
-    setTasks(filteredTasks);
+  const deleteTask = id => {
+    setTasks(tasks.filter(task => task.id !== id));
   };
 
-  const editTask = (id) => {
+  const editTask = id => {
     setEdit(id);
     onOpen();
   };
 
-  const completedTask = (id) => {
+  const completedTask = id => {
     setTasks(
-      tasks.map((task) =>
+      tasks.map(task =>
         task.id === id
           ? {
               ...task,
@@ -36,7 +35,7 @@ function TaskList({ tasks, setTasks, setEdit, onOpen }) {
               <div
                 className="sub-todo"
                 onClick={() => completedTask(id)}
-                style={{ textDecoration: complete ? "line-through" : "" }}
+                style={{ textDecoration: complete ? 'line-through' : '' }}
               >
                 <h4 style={{ fontWeight: '500' }}>{name}</h4>
               </div>
@@ -49,7 +48,7 @@ function TaskList({ tasks, setTasks, setEdit, onOpen }) {
                 <RiPencilLine
                   className="icons"
                   size="1.3rem"
-                  onClick={() => editTask({ name : task.name , id : task.id})}
+                  onClick={() => editTask({ name: task.name, id: task.id })}
                 />
               </div>
             </Box>
