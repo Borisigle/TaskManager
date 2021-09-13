@@ -10,6 +10,7 @@ export default function App() {
   const [tasks, setTasks] = useState([]);
   const [edit, setEdit] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [error, setError] = useState(true);
 
   return (
     <div className="App">
