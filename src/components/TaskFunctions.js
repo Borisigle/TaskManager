@@ -16,11 +16,9 @@ export const editTask = (id, taskValue, tasks, setTasks, setEdit, onClose) => {
 };
 
 export const addTask = (task, tasks, setTask, setTasks, onClose) => {
-  if (task.trim() === '') {
+  if (task.trim() != '') {
+    setTasks([...tasks, { name: task, id: uuidv4(), complete: false }]);
+    setTask('');
+    onClose();
   }
-
-  setTasks([...tasks, { name: task, id: uuidv4(), complete: false }]);
-  //localStorage.setItem('data', JSON.stringify([...tasks, newTask]))
-  setTask('');
-  onClose();
 };

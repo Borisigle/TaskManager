@@ -26,7 +26,7 @@ function TaskList({ tasks, setTasks, setEdit, onOpen }) {
   };
 
   return (
-    <Box mt={10}>
+    <Box mt={10} h="25rem" overflowY="auto">
       {tasks.length > 0 ? (
         tasks.map((task, i) => {
           const { name, id, complete } = task;
@@ -35,7 +35,7 @@ function TaskList({ tasks, setTasks, setEdit, onOpen }) {
               <div
                 className="sub-todo"
                 onClick={() => completedTask(id)}
-                style={{ textDecoration: complete ? 'line-through' : '' }}
+                style={{ color: complete ? '#b5b5b5' : 'black' }}
               >
                 <h4 style={{ fontWeight: '500' }}>{name}</h4>
               </div>
@@ -55,7 +55,7 @@ function TaskList({ tasks, setTasks, setEdit, onOpen }) {
           );
         })
       ) : (
-        <p>No task to show</p>
+        <p>Hi!, any plans for today??</p>
       )}
     </Box>
   );

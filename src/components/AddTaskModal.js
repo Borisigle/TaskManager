@@ -30,7 +30,11 @@ function AddTaskModal({
   };
 
   useEffect(() => {
-    setTask(edit.name);
+    if (edit) {
+      setTask(edit.name);
+    } else {
+      setTask('');
+    }
   }, [edit]);
 
   const size = useBreakpointValue({ base: 'xs', md: 'sm' });
@@ -70,7 +74,8 @@ function AddTaskModal({
               edit
                 ? () =>
                     editTask(edit.id, task, tasks, setTasks, setEdit, onClose)
-                : () => addTask(task, tasks, setTask, setTasks, onClose)
+                : () =>
+                    addTask(task, tasks, setTask, setTasks, onClose, setEdit)
             }
             colorScheme="blue"
             mr={3}

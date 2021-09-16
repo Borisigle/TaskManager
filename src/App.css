@@ -3,41 +3,29 @@ html {
 }
 
 body {
-  height:auto!important;
-  min-height:100vh;
+  min-height: -webkit-fill-available;
+  background-color: #f0efea;
 }
 
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#root {
+  height: 100vh;
 }
-
 .App {
   text-align: center;
-  min-height: 100vh;
-  background-color: #fcfcfc;
-  font-family: 'Poppins'
+  font-family: 'Poppins';
 }
 
 .contenedor {
-  height: 80%;
+  height: 100%;
 }
 
 .todo {
   margin: auto;
-  width: 84%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   font-size: 14px;
-  
 }
 .sub-todo {
   display: flex;
@@ -51,7 +39,7 @@ body {
 }
 
 .contenedor-header {
-  width: 84%;
+  width: 100%;
   margin: auto;
   padding-top: 40px;
   display: flex;
