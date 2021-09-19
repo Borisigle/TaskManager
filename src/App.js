@@ -29,12 +29,14 @@ export default function App() {
       <Box
         className="App"
         w="100%"
-        maxW="375px"
-        boxShadow="md"
+        maxW="350px"
+        maxH="650px"
+        boxShadow="rgba(17, 12, 46, 0.10) 0px 48px 100px 0px"
         position="relative"
         px={10}
         h="85%"
         bg="white"
+        borderRadius="xl"
       >
         <Header />
         <AddTaskModal

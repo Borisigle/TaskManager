@@ -12,12 +12,10 @@ const Header = () => {
             {moment().format('DD')}
           </Text>
           <VStack justifyContent="center">
-            <Text m={0} fontWeight="600" fontSize="sm">
+            <Text fontWeight="600" fontSize="sm">
               {moment().format('MMM').toUpperCase()}
             </Text>
-            <Text m={0} fontSize="sm">
-              {moment().format('YYYY')}
-            </Text>
+            <Text fontSize="sm">{moment().format('YYYY')}</Text>
           </VStack>
         </HStack>
         <Spacer />

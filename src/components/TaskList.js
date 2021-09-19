@@ -1,6 +1,6 @@
 import React from 'react';
 import { RiDeleteBin2Line, RiPencilLine } from 'react-icons/ri';
-import { Box } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 
 function TaskList({ tasks, setTasks, setEdit, onOpen }) {
   const deleteTask = id => {
@@ -26,12 +26,12 @@ function TaskList({ tasks, setTasks, setEdit, onOpen }) {
   };
 
   return (
-    <Box mt={10} h="25rem" overflowY="auto">
+    <Box mt={6} h="25rem" overflowY="auto">
       {tasks.length > 0 ? (
         tasks.map((task, i) => {
           const { name, id, complete } = task;
           return (
-            <Box mt={8} key={id} className="todo">
+            <Box mt={6} key={id} className="todo">
               <div
                 className="sub-todo"
                 onClick={() => completedTask(id)}
@@ -55,7 +55,7 @@ function TaskList({ tasks, setTasks, setEdit, onOpen }) {
           );
         })
       ) : (
-        <p>Hi!, any plans for today??</p>
+        <Text py={8}>Hi!, any plans for today?</Text>
       )}
     </Box>
   );
