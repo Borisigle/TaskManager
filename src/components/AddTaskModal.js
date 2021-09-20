@@ -52,7 +52,7 @@ function AddTaskModal({
       isOpen={isOpen}
       onClose={onClose}
       isCentered
-      size={size}
+      size={'xs'}
     >
       <ModalOverlay />
       <ModalContent>
@@ -77,7 +77,8 @@ function AddTaskModal({
                 : () =>
                     addTask(task, tasks, setTask, setTasks, onClose, setEdit)
             }
-            colorScheme="blue"
+            color="white"
+            bg="#c81d25"
             mr={3}
           >
             {edit ? 'Edit' : 'Add'}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { RiDeleteBin2Line, RiPencilLine } from 'react-icons/ri';
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text, Image } from '@chakra-ui/react';
+import png from '../notebook.png';
 
 function TaskList({ tasks, setTasks, setEdit, onOpen }) {
   const deleteTask = id => {
@@ -55,7 +56,11 @@ function TaskList({ tasks, setTasks, setEdit, onOpen }) {
           );
         })
       ) : (
-        <Text py={8}>Hi!, any plans for today?</Text>
+        <Box mt="1rem">
+          <Text py={8}>Empty list!</Text>
+          <Image src={png} w="8rem" m="auto" />
+          <Text py={8}>Any plans for today?</Text>
+        </Box>
       )}
     </Box>
   );
